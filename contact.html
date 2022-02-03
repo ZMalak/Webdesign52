@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="webdesign52.com" content="website designing company" />
+	<meta name="keywords" content="your,keywords,goes,here" />
+	<meta name="keywords" content="website,design,designing,webpage,web,wedesign,best,services,creative,good,looking,freelance,52" />
+	<meta name="Zainab" content="zainab malak" />
+	<link href='http://fonts.googleapis.com/css?family=Economica' rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" type="text/css" href="freestyle.css" title="WebDesign52" media="all" />
+	<title>WebDesign52</title>
+	<link rel="icon" href="http://www.webdesign52.com/images/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="http://www.webdesign52.com/images/favicon.ico" type="image/x-icon" />
+
+<script type="text/javascript" language="javascript"> 
+
+function echeck(str) {
+
+		var at="@"
+		var dot="."
+		var lat=str.indexOf(at)
+		var lstr=str.length
+		var ldot=str.indexOf(dot)
+		if (str.indexOf(at)==-1){
+		   alert("Invalid E-mail ID")
+		   return false
+		}
+
+		if (str.indexOf(at)==-1 || str.indexOf(at)==0 || str.indexOf(at)==lstr){
+		   alert("Invalid E-mail ID")
+		   return false
+		}
+
+		if (str.indexOf(dot)==-1 || str.indexOf(dot)==0 || str.indexOf(dot)==lstr){
+		    alert("Invalid E-mail ID")
+		    return false
+		}
+
+		 if (str.indexOf(at,(lat+1))!=-1){
+		    alert("Invalid E-mail ID")
+		    return false
+		 }
+
+		 if (str.substring(lat-1,lat)==dot || str.substring(lat+1,lat+2)==dot){
+		    alert("Invalid E-mail ID")
+		    return false
+		 }
+
+		 if (str.indexOf(dot,(lat+2))==-1){
+		    alert("Invalid E-mail ID")
+		    return false
+		 }
+		
+		 if (str.indexOf(" ")!=-1){
+		    alert("Invalid E-mail ID")
+		    return false
+		 }
+
+ 		 return true					
+	}
+
+
+
+function validateMyForm ( ) { 
+    var isValid = true;
+    if ( document.form1.Name.value == "" ) { 
+    alert ( "Please type your Name" ); 
+    isValid = false;
+    } else if ( document.form1.Name.value.length < 8 ) { 
+            alert ( "Your name must be at least 8 characters long" ); 
+            isValid = false;
+    } else if ( document.form1.Company.value == "" ) { 
+            alert ( "Please type your Company" ); 
+            isValid = false;
+    } else if ( document.form1.Phone.value == "" ) { 
+            alert ( "Please type your Phone Number" ); 
+            isValid = false;
+    } else if ( document.form1.Email.value == "" ) { 
+            alert ( "Please type your Email Address" ); 
+	   isValid = false;
+    }else if ( echeck(document.form1.Email.value)==false) {
+	    isValid = false;
+   }
+    return isValid;
+}
+</script>
+
+
+</head>
+
+<body class="light">
+<div id="layout">
+
+	<div id="header" class="row">
+		<div class="col c4">
+			<h1><a class="red" href="index.html"><img src = "images/logo.png" alt="" /></a></h1>
+		</div>
+		
+		<div class="col c2">
+			<ul class="menu">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="services.html">Services</a></li>
+			</ul>
+		</div>
+
+		<div class="col c2">
+			<ul class="menu">
+				<li><a href="ourprocess.html">How We Work?</a></li>
+				<li><a href="portfolio.html">Portfolio</a></li>
+			</ul>
+		</div>
+
+		<div class="col c2">
+			<ul class="menu">
+<!--				<li><a href="index5.html">Layout #5</a></li>-->
+				<li><a href="contact.html">Contact Us</a></li>
+			</ul>
+		</div>
+	</div>
+	<br />	
+	<div class="row separator1"></div>
+	
+	<br />	
+	<div class="row">
+		<div class="col c2">
+			<img src="images/contact.png" height="140" alt="" />
+		</div>
+		
+		<div class="col c6 alignjustify">
+			<h2>contact...</h2>
+<h4>Please fill in the details :</h4>
+</br>
+<form name="form1" action="contact-form-processing.php" method="POST" enctype="multipart/form-data">
+			<h4>Name:</h4><input name="Name" id="Name" type="text"><br />
+			<h4>Company:</h4><input name="Company" id="Company" type="text"><br />
+			<h4>Phone:</h4><input name="Phone" id="Phone" type="text"><br />
+			<h4>Email:</h4><input name="Email" id="Email" type="text"><br />
+			<h4>Message:</h4><textarea name="Message" type="text" rows="10" cols="50"></textarea><br /><br />
+			<input name="button" type="submit" value="Send" onclick="javascript:return validateMyForm();"/>
+			<input name="button" type="reset" value="Reset"  />
+</form>
+		<h4> Mail us at : support@webdesign52.com </h4>	
+		</div>
+		
+	</div>
+	
+	<div class="row separator">
+	</div>
+
+	<div id="footer" class="row">
+		<div class="col c12">
+			<p><a href="https://zainabmalak.netlify.app">&copy; Copyright 2012 Zainab Malak. &nbsp;</a>All Rights Reserved.</p>
+		</div>
+	</div>
+</div>
+</body>
+</html>
